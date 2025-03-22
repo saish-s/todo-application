@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'master', credentialsId: env.GIT_CRDENTIALS_ID url: "${GIT_REPO}"
+                git branch: 'master', credentialsId: env.GIT_CRDENTIALS_ID, url: "${GIT_REPO}"
             }
         }
 
