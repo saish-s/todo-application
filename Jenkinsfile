@@ -35,24 +35,24 @@ pipeline {
             }
         }
 
-        // stage('Deploy with Docker Compose') {
-        //     steps {
-        //         sh 'docker-compose down'
-        //         sh 'docker-compose up -d --build'
-        //     }
-        // }
+        stage('Deploy with Docker Compose') {
+            steps {
+                sh 'docker-compose down'
+                sh 'docker-compose up -d'
+            }
+        }
 
-        // stage('Verify Services') {
-        //     steps {
-        //         sh 'docker ps'
-        //     }
-        // }
+        stage('Verify Services') {
+            steps {
+                sh 'docker ps'
+            }
+        }
 
-        // stage('Clean Workspace') {
-        //     steps {
-        //         sh 'rm -rf *'
-        //     }
-        // }
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -rf *'
+            }
+        }
     }
 
     post {
